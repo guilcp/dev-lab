@@ -1,0 +1,43 @@
+.main-area {
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+#wallpaper {
+    object-fit: cover;
+    width: 1349px;
+    height: 601px;
+    text-align: center;
+}
+
+.main-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#texto-principal {
+    color: #FFFFFF;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.botao-central {
+    background-color: #FFBA5C;
+    border-radius: 5px;
+    width: 192px;
+    height: 50px;
+}
+
+footer {
+    background-color: #FFBA5C;
+}
+
+#footer-logo {
+    width: 452px;
+    height: 226px;
+}
