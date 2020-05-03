@@ -1,3 +1,9 @@
+.navbar-brand img {
+    object-fit: cover;
+    width: 150px;
+    height: 60px;
+}
+
 .main-area {
     position: relative;
     text-align: center;
@@ -35,9 +41,15 @@
 
 footer {
     background-color: #FFBA5C;
+    padding: 10px;
 }
 
 #footer-logo {
-    width: 452px;
-    height: 226px;
+    width: 340px;
+    height: 170px;
+    border-radius: 10px;
+}
+
+.row {
+    margin-right: 0px !important;
 }
