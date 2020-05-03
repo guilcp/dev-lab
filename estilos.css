@@ -4,6 +4,33 @@
     height: 60px;
 }
 
+
+/* Estilo modals */
+
+.modal-content {
+    background-color: #FFBA5C !important;
+    padding: 10px;
+}
+
+.modal-body button {
+    width: 100%;
+}
+
+.modal form {
+    text-align: center;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.modal small {
+    display: block;
+}
+
+
+/* .modal-title {
+    text-align: center;
+} */
+
 .main-area {
     position: relative;
     text-align: center;
@@ -14,7 +41,7 @@
 
 #wallpaper {
     object-fit: cover;
-    width: 1349px;
+    width: 100%;
     height: 601px;
     text-align: center;
 }
