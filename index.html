@@ -23,16 +23,16 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="login" method="get" action="pages/home.html">
                         <div class="form-group">
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                            <input type="email" class="form-control" id="emailLogin" name="emailLogin" placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                            <input type="password" class="form-control" id="senhaLogin" name="senhaLogin" placeholder="Senha">
                         </div>
                         <button type="submit" class="btn btn-dark">Entrar</button>
-                        <small><a href="">Esqueceu sua senha?</a></small>
-                        <small>Ainda não tem uma conta? <a href="#modalCadastro" data-dismiss="modal" data-toggle="modal">Crie uma aqui.</a></small>
+                        <small><a href=""><strong>Esqueceu sua senha?</strong></a></small>
+                        <small>Ainda não tem uma conta? <a href="#modalCadastro" data-dismiss="modal" data-toggle="modal"><strong>Crie uma aqui.</strong></a></small>
                     </form>
                 </div>
             </div>
@@ -49,18 +49,18 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="cadastro" method="" action="">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="exampleInputName1" placeholder="Nome">
+                            <input type="text" class="form-control" id="nomeCadastro" name="nomeCadastro" placeholder="Nome">
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email">
+                            <input type="email" class="form-control" id="emailCadastro" name="emailCadastro" placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Senha">
+                            <input type="password" class="form-control" id="senhaCadastro" name="senhaCadastro" placeholder="Senha">
                         </div>
                         <button type="submit" class="btn btn-dark">Cadastrar</button>
-                        <small>Já tem uma conta? <a href="#modalLogin" data-dismiss="modal" data-toggle="modal">Entre aqui</a></small>
+                        <small>Já tem uma conta? <a href="#modalLogin" data-dismiss="modal" data-toggle="modal"><strong>Entre aqui.</strong> </a></small>
                     </form>
                 </div>
             </div>
@@ -91,7 +91,7 @@
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><i
                         class="fas fa-search"></i></button>
                 </form>
             </div>
@@ -102,9 +102,8 @@
             <img id="wallpaper" src="https://marvel-live.freetls.fastly.net/canvas/2020/4/9e8397e103b44c87b6a54eecfd3de492?quality=95&fake=.png">
             <div class="main-content">
                 <p class="col-12" id="texto-principal">Programe em um ambiente de desenvolvimento online e compartilhado</p>
-                <button class="botao-central">
-                    Vamos lá!
-                </button>
+                <button type="button" class="btn btn-lg botao-central" data-toggle="modal" data-target="#modalCadastro">Vamos lá!</button>
+
             </div>
 
         </div>
@@ -115,7 +114,7 @@
                 <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
                     <img id="footer-logo" src="imgs/linkedin_banner_image_1.png">
                 </div>
-                <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                <div class="footer-text col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
                     <ul>
                         <li>
                             <a href="">Home</a>
@@ -124,17 +123,19 @@
                             <a href="">Sobre</a>
                         </li>
                         <li>
-                            <a href="">Entrar</a>
+                            <a href="" data-toggle="modal" data-target="#modalLogin">Entrar</a>
                         </li>
                         <li>
-                            <a href="">Cadastrar</a>
+                            <a href="" data-toggle="modal" data-target="#modalCadastro">Cadastrar</a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+                <div class=" footer-text col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
                     <h6>Pesquise pelo site</h6>
-                    <input type="text">
-                    <button>Pesquisar</button>
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Pesquisar</button>
+                    </form>
                 </div>
             </div>
 
@@ -144,7 +145,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src='main.js'></script>
+    <script src='index.js'></script>
 </body>
 
 </html>
