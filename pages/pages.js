@@ -7,6 +7,15 @@ document.onreadystatechange = function(e) {
     }
 };
 onload = () => {
+    criarSala.onsubmit = (evento) => {
+        alert('click criar');
+
+    };
+
+    entrarSala.onsubmit = (evento) => {
+        alert('click entrar');
+
+    };
 
     sair.onclick = (evento) => {
         sessionStorage.clear();

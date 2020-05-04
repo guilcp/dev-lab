@@ -8,9 +8,8 @@ document.onreadystatechange = function(e) {
 };
 
 onload = () => {
-    if (localStorage.getItem('users') == null) {
-        localStorage.setItem('users', JSON.stringify([]));
-    }
+    if (localStorage.getItem('users') == null) localStorage.setItem('users', JSON.stringify([]));
+    if (localStorage.getItem('rooms') == null) localStorage.setItem('rooms', JSON.stringify([]));
     // loga o usuário e registra o seu identificador
     login.onsubmit = (evento) => {
         let users = JSON.parse(localStorage.getItem('users'));
@@ -38,7 +37,6 @@ onload = () => {
         users.push(user);
 
         localStorage.setItem('users', JSON.stringify(users));
-        // alert(`Usuário ${nomeCadastro.value} cadastrado.`);
         $('#modalCadastro').modal('toggle');
         $('#modalLogin').modal('toggle');
         evento.preventDefault();

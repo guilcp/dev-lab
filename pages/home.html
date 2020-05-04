@@ -22,13 +22,10 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/sobre.html">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Programar</a>
+                        <a class="nav-link" href="sobre.html">Sobre</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Perfil</a>
@@ -48,51 +45,143 @@
         <div class="main-area">
             <div class="container">
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Criar nova sala</h5>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="emailLogin" name="emailLogin" placeholder="Nome">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="senhaLogin" name="senhaLogin" placeholder="Senha">
-                                </div>
-                                <button type="submit" class="btn btn-dark">Entrar</button>
+                                <h5 class="card-title">Criar Nova Sala</h5>
+                                <form id="criarSala" method="" action="">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="nomeSalaCriar" name="nomeSalaCriar" placeholder="Nome">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="senhaSalaCriar" name="senhaSalaCriar" placeholder="Senha">
+                                    </div>
+                                    <button type="submit" class="btn btn-dark">Criar</button>
+
+                                </form>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-users"></i> Minhas Salas</h5>
+                            </div>
+                            <div class=" card-body ">
+                                <table class="table table-hover table-striped table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Nome</th>
+                                            <th scope="col">Criado em</th>
+                                            <th scope="col">Pessoas</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                            <td><button type="button" class="btn btn-link"><i class="fas fa-ellipsis-h"></i></button></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                            <td><button type="button" class="btn btn-link"><i class="fas fa-ellipsis-h"></i></button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                        <div class="card " style="width: 18rem; ">
+                            <div class="card-body ">
+                                <h5 class="card-title ">Entrar em uma Sala</h5>
+                                <form id="entrarSala" method="" action="">
+                                    <div class="form-group ">
+                                        <input type="text " class="form-control " id="nomeSalaEntrar " name="nomeSalaEntrar " placeholder="Nome ">
+                                    </div>
+                                    <div class="form-group ">
+                                        <input type="text " class="form-control " id="senhaSalaEntrar " name="senhaSalaEntrar " placeholder="Senha ">
+                                    </div>
+                                    <button type="submit " class="btn btn-dark ">Entrar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-users"></i> Salas Participadas</h5>
+                            </div>
+                            <div class=" card-body ">
+                                <table class="table table-hover table-striped table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Nome</th>
+                                            <th scope="col">Criado em</th>
+                                            <th scope="col">Convidado por</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                            <td><button type="button" class="btn btn-link"><i class="fas fa-ellipsis-h"></i></button></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                            <td><button type="button" class="btn btn-link"><i class="fas fa-ellipsis-h"></i></button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </main>
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-                    <img id="footer-logo" src="../imgs/linkedin_banner_image_1.png">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 ">
+                    <img id="footer-logo" src="../imgs/linkedin_banner_image_1.png ">
                 </div>
-                <div class="footer-text col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                <div class="footer-text col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 ">
                     <ul>
                         <li>
-                            <a href="">Home</a>
+                            <a href=" ">Home</a>
                         </li>
                         <li>
-                            <a href="">Sobre</a>
+                            <a href=" ">Sobre</a>
                         </li>
                         <li>
-                            <a href="">Entrar</a>
-                        </li>
-                        <li>
-                            <a href="">Cadastrar</a>
+                            <a href=" ">Perfil</a>
                         </li>
                     </ul>
                 </div>
-                <div class=" footer-text col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
+                <div class="footer-text col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 ">
                     <h6>Pesquise pelo site</h6>
-                    <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Search">
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Pesquisar</button>
+                    <form class="form-inline ">
+                        <input class="form-control mr-sm-2 " type="search " placeholder="Pesquisar " aria-label="Search ">
+                        <button class="btn btn-secondary my-2 my-sm-0 " type="submit ">Pesquisar</button>
                     </form>
                 </div>
             </div>
@@ -100,9 +189,9 @@
         </div>
 
     </footer>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
     <script src='pages.js'></script>
 </body>
 
