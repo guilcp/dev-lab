@@ -139,3 +139,7 @@ ul {
 [v-cloak] {
     display: none;
 }
+
+#tlkio {
+    background-color: white;
+}

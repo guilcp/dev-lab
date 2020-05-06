@@ -88,7 +88,7 @@
                                                 <div class="dropdown">
                                                     <button type="button" class="btn btn-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <a class="dropdown-item" href="programar.html">Entrar</a>
+                                                        <a class="dropdown-item" :href="'programar.html?idSala='+room.id">Entrar</a>
                                                         <a class="dropdown-item" href="#">Editar</a>
                                                         <a class="dropdown-item" href="#">Excluir</a>
                                                     </div>
@@ -149,7 +149,7 @@
                                                 <div class="dropdown">
                                                     <button type="button" class="btn btn-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <a class="dropdown-item" href="#">Entrar</a>
+                                                        <a class="dropdown-item" :href="'programar.html?idSala='+room.id">Entrar</a>
                                                         <a class="dropdown-item" href="#">Sair</a>
                                                     </div>
                                                 </div>

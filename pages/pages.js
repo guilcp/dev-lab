@@ -20,6 +20,7 @@ onload = () => {
             }),
             rooms: JSON.parse(localStorage.getItem('rooms')),
             users: JSON.parse(localStorage.getItem('users')),
+            userAtual: JSON.parse(sessionStorage.getItem('userAtual'))
         },
         methods: {
             concatenateUsersInvite(invites) {
@@ -34,6 +35,10 @@ onload = () => {
                 return this.users.find((user) => {
                     return (user.id == id);
                 });
+            },
+            getNomeSala() {
+                let params = new URLSearchParams(window.location.search);
+                return params.get('idSala');
             }
         }
     });
@@ -109,4 +114,6 @@ onload = () => {
         window.location.pathname = "/index.html";
         console.log('eai');
     }
+
+
 }
