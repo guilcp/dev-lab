@@ -88,6 +88,14 @@ a:active {
     margin-bottom: 0px !important;
 }
 
+.dropdown-toggle,
+.dropdown-toggle:link,
+.dropdown-toggle:visited,
+.dropdown-toggle:hover,
+.dropdown-toggle:active {
+    color: white;
+}
+
 #texto-principal {
     color: #FFFFFF;
     font-size: 48px;
@@ -126,4 +134,8 @@ ul {
 .row {
     margin-right: 0px !important;
     margin-bottom: 10px;
+}
+
+[v-cloak] {
+    display: none;
 }
