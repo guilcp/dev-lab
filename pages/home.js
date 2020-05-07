@@ -43,6 +43,15 @@ onload = () => {
         }
     });
 
+    function getUserAtual() {
+        return JSON.parse(sessionStorage.getItem('userAtual'));
+    }
+
+    function getNomeSala() {
+        let params = new URLSearchParams(window.location.search);
+        return params.get('idSala');
+    }
+
     entrarSala.onsubmit = (evento) => {
         if (nomeSalaEntrar.value != "" && senhaSalaEntrar.value != "") {
             let rooms = JSON.parse(localStorage.getItem('rooms'));
