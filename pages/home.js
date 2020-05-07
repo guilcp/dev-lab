@@ -59,8 +59,6 @@ onload = () => {
                 alert('Essa sala não existe, deseja criá-la?');
                 evento.preventDefault();
             } else {
-                alert('achou');
-
                 if (found.senha == document.getElementById('senhaSalaEntrar').value) {
                     let userAtual = JSON.parse(sessionStorage.getItem('userAtual'));
                     let indexFound = rooms.findIndex((room) => {
@@ -69,6 +67,7 @@ onload = () => {
                     if (found.criadoPor != userAtual.id) {
                         rooms[indexFound].invites.push(userAtual);
                         localStorage.setItem('rooms', JSON.stringify(rooms));
+                        evento.target.action.replace("undefined", found.id);
                     }
                 } else {
                     alert('A senha inserida é inválida!');
@@ -106,6 +105,7 @@ onload = () => {
                 };
                 rooms.push(newRoom);
                 localStorage.setItem('rooms', JSON.stringify(rooms));
+                evento.target.action.replace("undefined", found.id);
             } else {
                 evento.preventDefault();
                 alert('Já existe uma sala com esse nome, tente novamente!');
