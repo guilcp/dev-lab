@@ -39,6 +39,12 @@ onload = () => {
             getNomeSala() {
                 let params = new URLSearchParams(window.location.search);
                 return params.get('idSala');
+            },
+            findRoom() {
+                let found = this.rooms.find((room) => {
+                    return (nomeSalaEntrar.value == room.nome && senhaSalaEntrar.value == room.senha);
+                });
+                if (found != undefined) return found.id;
             }
         }
     });
