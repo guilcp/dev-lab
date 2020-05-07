@@ -52,7 +52,7 @@
                         <div class="sec-widget" data-widget="6d2090af94196903915268188962e183"></div>
                     </div>
                     <div class="col-4">
-                        <div id="tlkio" style="height: 521px;" data-nickname="coco" data-channel="dev-lab-1" data-theme="theme--minimal"></div>
+                        <div id="tlkio" style="height: 521px;" :data-nickname="userAtual.nome" :data-channel="'dev-lab-'+getNomeSala()" data-theme="theme--minimal"></div>
                         <!-- <script async src="http://tlk.io/embed.js" type="text/javascript"></script> -->
                         <!-- <div id="tlkio" data-channel="dev-lab-1" data-theme="theme--minimal" :data-nickname="userAtual.nome" style="width:400px;height:400px;"></div> -->
 
@@ -111,7 +111,7 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, "script", "sphere-engine-compilers-jssdk"));
     </script>
-    <script async src="http://tlk.io/embed.js" type="text/javascript"></script>
+    <script async src="https://tlk.io/embed.js" type="text/javascript"></script>
     <script src='pages.js'></script>
 </body>
 
