@@ -8,11 +8,25 @@ document.onreadystatechange = function(e) {
 };
 
 onload = () => {
-    if (localStorage.getItem('users') == null) localStorage.setItem('users', JSON.stringify([]));
-    if (localStorage.getItem('rooms') == null) localStorage.setItem('rooms', JSON.stringify([]));
+    // if (localStorage.getItem('users') == null) localStorage.setItem('users', JSON.stringify([]));
+    // if (localStorage.getItem('rooms') == null) localStorage.setItem('rooms', JSON.stringify([]));
     // loga o usuário e registra o seu identificador
     login.onsubmit = (evento) => {
-        let users = JSON.parse(localStorage.getItem('users'));
+        jQuery.ajax({
+            type: "POST",
+            url: 'index.php',
+            dataType: 'json',
+            data: { functionname: 'getJson', arguments: ['dbfake.json'] },
+            success: function(obj, textstatus) {
+                if (!('error' in obj)) {
+                    users = obj.result;
+                } else {
+                    console.log(obj.error);
+                }
+            }
+        });
+        // let users = JSON.parse(localStorage.getItem('users'));
+
         let found = users.find((user) => {
             return (user.email == document.getElementById('emailLogin').value && user.senha == document.getElementById('senhaLogin').value);
         });
