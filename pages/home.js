@@ -44,7 +44,6 @@ onload = () => {
     });
 
     entrarSala.onsubmit = (evento) => {
-        alert('click entrar');
         if (nomeSalaEntrar.value != "" && senhaSalaEntrar.value != "") {
             let rooms = JSON.parse(localStorage.getItem('rooms'));
             let found = rooms.find((room) => {
@@ -71,11 +70,13 @@ onload = () => {
                 }
                 // sessionStorage.setItem('userAtual', JSON.stringify(found));
             }
+        } else {
+            evento.preventDefault();
+            alert("Digite as credenciais para entrar na sala!");
         }
     };
 
     criarSala.onsubmit = (evento) => {
-        // alert('click criar');
         if (nomeSalaCriar.value != "" && senhaSalaCriar.value != "") {
             let rooms = JSON.parse(localStorage.getItem('rooms'));
             let found = rooms.find((room) => {
@@ -104,7 +105,8 @@ onload = () => {
                 alert('Já existe uma sala com esse nome, tente novamente!');
             }
         } else {
-            alert("Digite as credenciais para entrar na sala!");
+            evento.preventDefault();
+            alert("Digite as credenciais para criar na sala!");
         }
     };
 
