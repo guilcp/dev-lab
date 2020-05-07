@@ -59,7 +59,15 @@ function getUserAtual() {
 
 function getNomeSala() {
     let params = new URLSearchParams(window.location.search);
-    return params.get('idSala');
+    if (params.get('idSala') != undefined || params.get('idSala') != null) {
+        return params.get('idSala');
+    } else {
+        let found = JSON.parse(localStorage.getItem('rooms')).find((room) => {
+            return (room.nome == params.get('nomeSalaEntrar') && room.senha == params.get('senhaSalaEntrar'));
+        });
+        return found.id;
+    }
 }
+
 $('#tlkio').attr('data-nickname', getUserAtual().nome);
 $('#tlkio').attr('data-channel', 'dev-lab-' + getNomeSala());

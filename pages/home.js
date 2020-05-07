@@ -67,8 +67,8 @@ onload = () => {
                     if (found.criadoPor != userAtual.id) {
                         rooms[indexFound].invites.push(userAtual);
                         localStorage.setItem('rooms', JSON.stringify(rooms));
-                        evento.target.action.replace("undefined", found.id);
                     }
+                    evento.target.action = evento.target.action.replace("undefined", found.id);
                 } else {
                     alert('A senha inserida é inválida!');
                     evento.preventDefault();
