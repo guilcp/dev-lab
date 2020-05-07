@@ -43,14 +43,7 @@ onload = () => {
     //     }
     // });
 
-    function getUserAtual() {
-        return JSON.parse(sessionStorage.getItem('userAtual'));
-    }
 
-    function getNomeSala() {
-        let params = new URLSearchParams(window.location.search);
-        return params.get('idSala');
-    }
 
     sair.onclick = (evento) => {
         sessionStorage.clear();
@@ -58,6 +51,15 @@ onload = () => {
         window.location.pathname = "/index.html";
         console.log('eai');
     }
-
-
 }
+
+function getUserAtual() {
+    return JSON.parse(sessionStorage.getItem('userAtual'));
+}
+
+function getNomeSala() {
+    let params = new URLSearchParams(window.location.search);
+    return params.get('idSala');
+}
+$('#tlkio').attr('data-nickname', getUserAtual().nome);
+$('#tlkio').attr('data-channel', 'dev-lab-' + getNomeSala());
