@@ -81,10 +81,10 @@ onload = () => {
                     });
             },
             setData(dados) {
-                axios.post('../index.php', JSON.stringify({
+                axios.post('../index.php', {
                         functionname: "writeJson",
                         arguments: ["dbfake.json", JSON.stringify(dados)]
-                    }))
+                    })
                     .then(data => {
                         if (data == true) {
                             this.getData();
