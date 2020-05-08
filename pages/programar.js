@@ -7,7 +7,32 @@ document.onreadystatechange = function(e) {
     }
 };
 onload = () => {
-    TogetherJS(this);
+    let params = new URLSearchParams(window.location.search);
+
+    let response = jQuery.ajax({
+        type: "POST",
+        url: '../index.php',
+        dataType: 'json',
+        async: !1,
+        data: JSON.stringify({
+            functionname: "getJson",
+            arguments: ["dbfake.json"]
+        }),
+        success: function(data) {},
+        error: function(xhr, status, error) {
+            var err = eval("(" + xhr.responseText + ")");
+            alert(err.Message);
+            console.log(err.Message);
+        }
+    });
+    let rooms = response.responseJSON.result.rooms;
+    let found = rooms.find((room) => {
+        return ((room.nome == params.get('nomeSalaEntrar') && room.senha == params.get('senhaSalaEntrar')) || (room.nome == params.get('nomeSalaCriar') && room.senha == params.get('senhaSalaCriar')) || (room.id == params.get('idSala')));
+    });
+    let userAtual = JSON.parse(sessionStorage.getItem('userAtual'));
+    if (found != undefined && userAtual.id == found.criadoPor) {
+        TogetherJS(this);
+    }
     // return false;
 
     sair.onclick = (evento) => {
@@ -35,13 +60,7 @@ function getNomeSala() {
                 functionname: "getJson",
                 arguments: ["dbfake.json"]
             }),
-            success: function(data) {
-                let rooms = data.result.rooms;
-                let found = rooms.find((room) => {
-                    return ((room.nome == params.get('nomeSalaEntrar') && room.senha == params.get('senhaSalaEntrar')) || room.nome == params.get('nomeSalaCriar') && room.senha == params.get('senhaSalaCriar'));
-                });
-                return found.id;
-            },
+            success: function(data) {},
             error: function(xhr, status, error) {
                 var err = eval("(" + xhr.responseText + ")");
                 alert(err.Message);

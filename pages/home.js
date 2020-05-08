@@ -112,9 +112,14 @@ onload = () => {
                                 return (room.nome == document.getElementById('nomeSalaEntrar').value);
                             });
                             if (found.criadoPor != userAtual.id) {
-                                this.data.rooms[indexFound].invites.push(userAtual);
+                                let foundInvites = found.invites.find((invite) => {
+                                    return (invite.id == userAtual.id);
+                                });
+                                if (foundInvites == undefined) {
+                                    this.data.rooms[indexFound].invites.push(userAtual);
+                                    this.setData(this.data);
+                                }
                                 // localStorage.setItem('rooms', JSON.stringify(rooms));
-                                this.setData(this.data);
                             }
                             event.target.action = event.target.action.replace("undefined", found.id);
                         } else {
