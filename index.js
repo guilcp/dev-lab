@@ -8,51 +8,93 @@ document.onreadystatechange = function(e) {
 };
 
 onload = () => {
-    // if (localStorage.getItem('users') == null) localStorage.setItem('users', JSON.stringify([]));
-    // if (localStorage.getItem('rooms') == null) localStorage.setItem('rooms', JSON.stringify([]));
     // loga o usuário e registra o seu identificador
     login.onsubmit = (evento) => {
         jQuery.ajax({
             type: "POST",
             url: 'index.php',
             dataType: 'json',
-            data: { functionname: 'getJson', arguments: ['dbfake.json'] },
-            success: function(obj, textstatus) {
-                if (!('error' in obj)) {
-                    users = obj.result;
+            async: !1,
+            data: JSON.stringify({
+                functionname: "getJson",
+                arguments: ["dbfake.json"]
+            }),
+            success: function(data) {
+                let users = data.result.result.users;
+
+                let found = users.find((user) => {
+                    return (user.email == document.getElementById('emailLogin').value && user.senha == document.getElementById('senhaLogin').value);
+                });
+
+                if (found == undefined) {
+                    alert('Credenciais de acesso inválidas!');
+                    evento.preventDefault();
                 } else {
-                    console.log(obj.error);
+                    sessionStorage.setItem('userAtual', JSON.stringify(found));
                 }
+            },
+            error: function(xhr, status, error) {
+                var err = eval("(" + xhr.responseText + ")");
+                alert(err.Message);
+                console.log(err.Message);
             }
         });
-        // let users = JSON.parse(localStorage.getItem('users'));
-
-        let found = users.find((user) => {
-            return (user.email == document.getElementById('emailLogin').value && user.senha == document.getElementById('senhaLogin').value);
-        });
-
-        if (found == undefined) {
-            alert('Credenciais de acesso inválidas!');
-            evento.preventDefault();
-        } else {
-            sessionStorage.setItem('userAtual', JSON.stringify(found));
-        }
     };
     // cadastra o usuario
     cadastro.onsubmit = (evento) => {
-        let users = JSON.parse(localStorage.getItem('users'));
-        let user = {
-            id: users.length,
-            nome: nomeCadastro.value,
-            email: emailCadastro.value,
-            senha: senhaCadastro.value
-        };
+        jQuery.ajax({
+            type: "POST",
+            url: 'index.php',
+            dataType: 'json',
+            async: !1,
+            data: JSON.stringify({
+                functionname: "getJson",
+                arguments: ["dbfake.json"]
+            }),
+            success: function(data) {
+                let users = data.result.result.users;
 
-        users.push(user);
+                let user = {
+                    id: users.length,
+                    nome: nomeCadastro.value,
+                    email: emailCadastro.value,
+                    senha: senhaCadastro.value
+                };
+                let found = users.find((user) => {
+                    return (user.email == document.getElementById('emailCadastro').value);
+                });
+                if (found == undefined) {
+                    users.push(user);
+                    jQuery.ajax({
+                        type: "POST",
+                        url: 'index.php',
+                        dataType: 'json',
+                        async: !1,
+                        data: JSON.stringify({
+                            functionname: "writeJson",
+                            arguments: ["dbfake.json", JSON.stringify(data.result)]
+                        }),
+                        success: function(data) {
+                            $('#modalCadastro').modal('toggle');
+                            $('#modalLogin').modal('toggle');
+                            evento.preventDefault();
+                        },
+                        error: function(xhr, status, error) {
+                            var err = eval("(" + xhr.responseText + ")");
+                            alert(err.Message);
+                            console.log(err.Message);
+                        }
+                    });
+                } else {
+                    alert("Esse email já está cadastrado, por favor tente outro!");
+                }
+            },
+            error: function(xhr, status, error) {
+                var err = eval("(" + xhr.responseText + ")");
+                alert(err.Message);
+                console.log(err.Message);
+            }
+        });
 
-        localStorage.setItem('users', JSON.stringify(users));
-        $('#modalCadastro').modal('toggle');
-        $('#modalLogin').modal('toggle');
-        evento.preventDefault();
     };
 };

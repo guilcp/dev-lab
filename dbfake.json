@@ -1,4 +1,11 @@
 {
-    "rooms": [],
-    "users": []
+    "result": {
+        "rooms": [],
+        "users": [{
+            "id": 0,
+            "nome": "guilherme",
+            "email": "guilherme@gmail.com",
+            "senha": "123"
+        }]
+    }
 }
