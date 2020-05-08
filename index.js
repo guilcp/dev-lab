@@ -20,7 +20,7 @@ onload = () => {
                 arguments: ["dbfake.json"]
             }),
             success: function(data) {
-                let users = data.result.result.users;
+                let users = data.result.users;
 
                 let found = users.find((user) => {
                     return (user.email == document.getElementById('emailLogin').value && user.senha == document.getElementById('senhaLogin').value);
@@ -52,10 +52,10 @@ onload = () => {
                 arguments: ["dbfake.json"]
             }),
             success: function(data) {
-                let users = data.result.result.users;
+                let users = data.result.users;
 
                 let user = {
-                    id: users.length,
+                    id: users.length + 1,
                     nome: nomeCadastro.value,
                     email: emailCadastro.value,
                     senha: senhaCadastro.value

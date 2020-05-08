@@ -11,24 +11,18 @@ onload = () => {
         el: '#app',
         data: {
             errors: [],
-            data: getData(),
-            roomsCriadas: this.data.rooms.filter((room) => {
-                return (room.criadoPor == JSON.parse(sessionStorage.getItem('userAtual')).id);
-            }),
-            roomsParticipadas: this.data.rooms.filter((room) => {
-                return (room.invites.find((user) => {
-                    return (user.id == JSON.parse(sessionStorage.getItem('userAtual')).id);
-                }));
-            }),
+            data: {},
+            roomsCriadas: {},
+            roomsParticipadas: {},
             userAtual: JSON.parse(sessionStorage.getItem('userAtual'))
         },
-        beforeMount: function() {
-            axios.post('../index.php', JSON.stringify({
+        created: function() {
+            axios.post('../index.php', {
                     functionname: "getJson",
                     arguments: ["dbfake.json"]
-                }))
-                .then(data => {
-                    this.data = data.result.result;
+                })
+                .then(returned => {
+                    this.data = returned.data.result;
                     this.roomsCriadas = this.data.rooms.filter((room) => {
                         return (room.criadoPor == JSON.parse(sessionStorage.getItem('userAtual')).id);
                     });
@@ -67,12 +61,12 @@ onload = () => {
                 if (found != undefined) return found.id;
             },
             getData() {
-                axios.post('../index.php', JSON.stringify({
+                axios.post('../index.php', {
                         functionname: "getJson",
                         arguments: ["dbfake.json"]
-                    }))
+                    })
                     .then(data => {
-                        this.data = data.result.result;
+                        this.data = data.result;
                         this.roomsCriadas = this.data.rooms.filter((room) => {
                             return (room.criadoPor == JSON.parse(sessionStorage.getItem('userAtual')).id);
                         });

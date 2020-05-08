@@ -49,7 +49,6 @@ onload = () => {
         sessionStorage.clear();
         window.location.search = "";
         window.location.pathname = "/index.html";
-        console.log('eai');
     }
 }
 
@@ -62,8 +61,31 @@ function getNomeSala() {
     if (params.get('idSala') != undefined || params.get('idSala') != null) {
         return params.get('idSala');
     } else {
-        let found = JSON.parse(localStorage.getItem('rooms')).find((room) => {
-            return (room.nome == params.get('nomeSalaEntrar') && room.senha == params.get('senhaSalaEntrar'));
+        let response = jQuery.ajax({
+            type: "POST",
+            url: '../index.php',
+            dataType: 'json',
+            async: !1,
+            data: JSON.stringify({
+                functionname: "getJson",
+                arguments: ["dbfake.json"]
+            }),
+            success: function(data) {
+                let rooms = data.result.rooms;
+                let found = rooms.find((room) => {
+                    return ((room.nome == params.get('nomeSalaEntrar') && room.senha == params.get('senhaSalaEntrar')) || room.nome == params.get('nomeSalaCriar') && room.senha == params.get('senhaSalaCriar'));
+                });
+                return found.id;
+            },
+            error: function(xhr, status, error) {
+                var err = eval("(" + xhr.responseText + ")");
+                alert(err.Message);
+                console.log(err.Message);
+            }
+        });
+        let rooms = response.responseJSON.result.rooms;
+        let found = rooms.find((room) => {
+            return ((room.nome == params.get('nomeSalaEntrar') && room.senha == params.get('senhaSalaEntrar')) || room.nome == params.get('nomeSalaCriar') && room.senha == params.get('senhaSalaCriar'));
         });
         return found.id;
     }
