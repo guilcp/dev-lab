@@ -114,7 +114,7 @@ onload = () => {
                             if (found.criadoPor != userAtual.id) {
                                 this.data.rooms[indexFound].invites.push(userAtual);
                                 // localStorage.setItem('rooms', JSON.stringify(rooms));
-                                this.setData();
+                                this.setData(this.data);
                             }
                             event.target.action = event.target.action.replace("undefined", found.id);
                         } else {
