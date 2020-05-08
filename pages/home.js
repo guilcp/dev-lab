@@ -46,7 +46,7 @@ onload = () => {
                 return names;
             },
             findUserById(id) {
-                return this.users.find((user) => {
+                return this.data.users.find((user) => {
                     return (user.id == id);
                 });
             },
@@ -55,7 +55,7 @@ onload = () => {
                 return params.get('idSala');
             },
             findRoom() {
-                let found = this.rooms.find((room) => {
+                let found = this.data.rooms.find((room) => {
                     return (nomeSalaEntrar.value == room.nome && senhaSalaEntrar.value == room.senha);
                 });
                 if (found != undefined) return found.id;
