@@ -1,3 +1,4 @@
+// TogetherJSConfig_hubBase = "https://togetherjs-hub.glitch.me/";
 document.onreadystatechange = function(e) {
     if (document.readyState === 'complete') {
         if (window.location.pathname != "/index.html" && sessionStorage.getItem('userAtual') == null) {
@@ -8,7 +9,9 @@ document.onreadystatechange = function(e) {
 };
 onload = () => {
     let params = new URLSearchParams(window.location.search);
-
+    // if (params.get('togetherjs') != null || params.get('togetherjs') != undefined) {
+    //     TogetherJSConfig_hubBase = "https://togetherjs-hub.glitch.me/";
+    // }
     let response = jQuery.ajax({
         type: "POST",
         url: '../index.php',
@@ -31,7 +34,7 @@ onload = () => {
     });
     let userAtual = JSON.parse(sessionStorage.getItem('userAtual'));
     if (found != undefined && userAtual.id == found.criadoPor) {
-        TogetherJS(this);
+        TowTruck(this);
     }
     // return false;
 
