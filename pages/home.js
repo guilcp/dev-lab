@@ -154,12 +154,12 @@ onload = () => {
                         this.setData(this.data);
                         event.target.action.replace("undefined", found.id);
                     } else {
-                        event.preventDefault();
                         alert('Já existe uma sala com esse nome, tente novamente!');
+                        event.preventDefault();
                     }
                 } else {
-                    event.preventDefault();
                     alert("Digite as credenciais para criar na sala!");
+                    event.preventDefault();
                 }
             }
         }
