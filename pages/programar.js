@@ -1,4 +1,3 @@
-// TogetherJSConfig_hubBase = "https://togetherjs-hub.glitch.me/";
 document.onreadystatechange = function(e) {
     if (document.readyState === 'complete') {
         if (window.location.pathname != "/index.html" && sessionStorage.getItem('userAtual') == null) {
@@ -7,7 +6,9 @@ document.onreadystatechange = function(e) {
         }
     }
 };
+
 onload = () => {
+
     let params = new URLSearchParams(window.location.search);
     // if (params.get('togetherjs') != null || params.get('togetherjs') != undefined) {
     //     TogetherJSConfig_hubBase = "https://togetherjs-hub.glitch.me/";
@@ -80,3 +81,24 @@ function getNomeSala() {
 
 $('#tlkio').attr('data-nickname', getUserAtual().nome);
 $('#tlkio').attr('data-channel', 'dev-lab-' + getNomeSala());
+
+$('#widget_form_source', frames["codeText"].document).keyup(function(event) {
+    // grab text for sending as a message to collaborate
+    var sharedtext = $('#codeText').html()
+        //alert(sharedtext)
+    if (TogetherJS.running) {
+        TogetherJS.send({
+            type: "text-send",
+            output: sharedtext
+        });
+        console.log(sharedtext)
+    }
+});
+
+TogetherJS.hub.on("text-send", function(msg) {
+    if (!msg.sameUrl) {
+        return;
+    }
+    $('#codeText').html(msg.output);
+    console.log(msg.output)
+});
