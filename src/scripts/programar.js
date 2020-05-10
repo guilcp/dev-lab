@@ -296,7 +296,7 @@ onload = () => {
         async: !1,
         data: JSON.stringify({
             functionname: "getJson",
-            arguments: ["dbfake.json"]
+            arguments: ["src/dbfake.json"]
         }),
         success: function(data) {},
         error: function(xhr, status, error) {
@@ -356,7 +356,7 @@ function getNomeSala() {
             async: !1,
             data: JSON.stringify({
                 functionname: "getJson",
-                arguments: ["dbfake.json"]
+                arguments: ["src/dbfake.json"]
             }),
             success: function(data) {},
             error: function(xhr, status, error) {
