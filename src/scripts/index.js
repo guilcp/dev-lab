@@ -1,8 +1,8 @@
 document.onreadystatechange = function(e) {
     if (document.readyState === 'complete') {
-        if (window.location.pathname == "/index.html" && sessionStorage.getItem('userAtual') != null) {
+        if (window.location.pathname == "/src/index.html" && sessionStorage.getItem('userAtual') != null) {
             window.location.search = "";
-            window.location.pathname = "/home.html";
+            window.location.pathname = "/src/home.html";
         }
     }
 };
