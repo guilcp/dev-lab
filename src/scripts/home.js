@@ -17,9 +17,9 @@ onload = () => {
             userAtual: JSON.parse(sessionStorage.getItem('userAtual'))
         },
         created: function() {
-            axios.post('index.php', {
+            axios.post('../../index.php', {
                     functionname: "getJson",
-                    arguments: ["dbfake.json"]
+                    arguments: ["src/dbfake.json"]
                 })
                 .then(returned => {
                     this.data = returned.data.result;
@@ -61,9 +61,9 @@ onload = () => {
                 if (found != undefined) return found.id;
             },
             getData() {
-                axios.post('index.php', {
+                axios.post('../../index.php', {
                         functionname: "getJson",
-                        arguments: ["dbfake.json"]
+                        arguments: ["src/dbfake.json"]
                     })
                     .then(data => {
                         this.data = data.result;
@@ -81,9 +81,9 @@ onload = () => {
                     });
             },
             setData(dados) {
-                axios.post('index.php', {
+                axios.post('../../index.php', {
                         functionname: "writeJson",
-                        arguments: ["dbfake.json", JSON.stringify(dados)]
+                        arguments: ["src/dbfake.json", JSON.stringify(dados)]
                     })
                     .then(data => {
                         if (data == true) {

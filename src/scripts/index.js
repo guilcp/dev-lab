@@ -2,7 +2,7 @@ document.onreadystatechange = function(e) {
     if (document.readyState === 'complete') {
         if (window.location.pathname == "/index.html" && sessionStorage.getItem('userAtual') != null) {
             window.location.search = "";
-            window.location.pathname = "/pages/home.html";
+            window.location.pathname = "/home.html";
         }
     }
 };
@@ -12,12 +12,12 @@ onload = () => {
     login.onsubmit = (evento) => {
         jQuery.ajax({
             type: "POST",
-            url: 'index.php',
+            url: '../../index.php',
             dataType: 'json',
             async: !1,
             data: JSON.stringify({
                 functionname: "getJson",
-                arguments: ["dbfake.json"]
+                arguments: ["src/dbfake.json"]
             }),
             success: function(data) {
                 let users = data.result.users;
@@ -44,12 +44,12 @@ onload = () => {
     cadastro.onsubmit = (evento) => {
         jQuery.ajax({
             type: "POST",
-            url: 'index.php',
+            url: '../../index.php',
             dataType: 'json',
             async: !1,
             data: JSON.stringify({
                 functionname: "getJson",
-                arguments: ["dbfake.json"]
+                arguments: ["src/dbfake.json"]
             }),
             success: function(data) {
                 let users = data.result.users;
@@ -67,12 +67,12 @@ onload = () => {
                     users.push(user);
                     jQuery.ajax({
                         type: "POST",
-                        url: 'index.php',
+                        url: '../../index.php',
                         dataType: 'json',
                         async: !1,
                         data: JSON.stringify({
                             functionname: "writeJson",
-                            arguments: ["dbfake.json", JSON.stringify(data.result)]
+                            arguments: ["src/dbfake.json", JSON.stringify(data.result)]
                         }),
                         success: function(data) {
                             $('#modalCadastro').modal('toggle');

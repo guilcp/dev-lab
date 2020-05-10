@@ -291,7 +291,7 @@ onload = () => {
     }
     let response = jQuery.ajax({
         type: "POST",
-        url: 'index.php',
+        url: '../../index.php',
         dataType: 'json',
         async: !1,
         data: JSON.stringify({
@@ -351,7 +351,7 @@ function getNomeSala() {
     } else {
         let response = jQuery.ajax({
             type: "POST",
-            url: 'index.php',
+            url: '../../index.php',
             dataType: 'json',
             async: !1,
             data: JSON.stringify({
