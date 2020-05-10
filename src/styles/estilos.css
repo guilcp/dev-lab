@@ -143,3 +143,29 @@ ul {
 #tlkio {
     background-color: white;
 }
+
+div #app {
+    background-color: #343F4B;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#app .nav {
+    background-color: #5A6978;
+    border-radius: 5px;
+}
+
+.btn-group {
+    margin-bottom: 5px;
+}
+
+#code {
+    width: 100%;
+    height: 205px;
+}
+
+#nav-tabContent2 textarea {
+    width: 100%;
+    height: 125px;
+    margin-bottom: 5px;
+}

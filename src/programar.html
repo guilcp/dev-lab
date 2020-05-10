@@ -3,18 +3,18 @@
 
 <head>
     <meta charset="utf-8">
-    <title>DevLab - Home</title>
+    <title>DevLab - Programar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="../fontawesome/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../estilos.css">
+    <link href="assets/fontawesome/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/estilos.css">
 </head>
 
 <body>
 
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#"><img src="../imgs/logo_transparent_resized.png" alt=""></a>
+            <a class="navbar-brand" href="#"><img src="assets/imgs/logo_transparent_resized.png" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,27 +44,49 @@
             </div>
         </nav>
     </header>
-    <main id="app">
+    <main>
         <div class="main-area">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8" style="height: 521px;">
-                        <!-- <div id="codeText" class="sec-widget" data-widget="6d2090af94196903915268188962e183"></div> -->
-                        <!-- <form action="https://www.jdoodle.com/api/redirect-to-post/online-java-compiler" method="post">
-                            Script: <textarea name="initScript" rows="8" cols="80"></textarea>
-                            <input type="submit" value="Submit">
-                        </form> -->
-                        <!-- <div data-pym-src="https://www.jdoodle.com/embed/v0/2?stdin=0&arg=0"></div> -->
-                        <!-- <iframe src="https://paiza.io/projects/e/fhsALhBtftihErZrN4hs8g?theme=twilight" width="100%" height="500" scrolling="no" seamless="seamless"></iframe> -->
-                        <button id="run" type="button" class="btn btn-secondary">Run</button>
+                    <div id="app" class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8" style="height: 521px;">
+                        <div class="btn-group" role="group" aria-label="">
+                            <button id="run" v-on:click="runCode" type="button" class="btn btn-secondary"><i class="fas fa-play"></i>    Executar</button>
+                            <button id="share" v-on:click="sharePage" type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" title="Compartilhe esse link" data-placement="bottom" data-content="Aguarde...">
+                                <i class="fas fa-share-alt"></i>    Compartilhar  
+                            </button>
+                            <button v-on:click="download" type="button" class="btn btn-secondary"><i class="fas fa-download"></i>    Baixar</button>
+                        </div>
+
+                        <!-- <button id="run" v-on:click="runCode" type="button" class="btn btn-secondary">Run</button> -->
                         <nav>
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">main.c</a>
+                            <div class="nav nav-tabs" id="nav-tab-principal" role="tablist">
+                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">main</a>
                             </div>
                         </nav>
-                        <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-content" id="nav-tabContent1">
                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                 <textarea id="code"></textarea>
+                                <nav>
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        <a class="nav-item nav-link active" id="tab-input-1" data-toggle="tab" href="#input-1" role="tab" aria-controls="input-1" aria-selected="true">Input</a>
+                                        <a class="nav-item nav-link" id="tab-output-1" data-toggle="tab" href="#output-1" role="tab" aria-controls="output-1" aria-selected="false">Output</a>
+                                    </div>
+
+
+                                </nav>
+
+                                <div class="tab-content" id="nav-tabContent2">
+                                    <div class="tab-pane fade show active" id="input-1" role="tabpanel" aria-labelledby="tab-input-1">
+                                        <textarea></textarea>
+                                    </div>
+                                    <div class="tab-pane fade show output" id="output-1" role="tabpanel" aria-labelledby="tab-output-1">
+                                        <textarea readonly></textarea>
+                                    </div>
+                                    <select class="custom-select" v-on:change="selectChange">
+                                        <option selected>Selecione a linguagem</option>
+                                        <option v-for="language in languages">{{language.nome}}</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -79,7 +101,7 @@
         <div class="container ">
             <div class="row ">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 ">
-                    <img id="footer-logo" src="../imgs/linkedin_banner_image_1.png ">
+                    <img id="footer-logo" src="assets/imgs/linkedin_banner_image_1.png ">
                 </div>
                 <div class="footer-text col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 ">
                     <ul>
@@ -106,32 +128,19 @@
         </div>
 
     </footer>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        // SEC_BASE = "compilers.widgets.sphere-engine.com";
-        // SEC_HTTPS = true;
-        // (function(d, s, id) {
-        //     SEC = window.SEC || (window.SEC = []);
-        //     var js, fjs = d.getElementsByTagName(s)[0];
-        //     if (d.getElementById(id)) return;
-        //     js = d.createElement(s);
-        //     js.id = id;
-        //     js.src = (SEC_HTTPS ? "https" : "http") + "://compilers.widgets.sphere-engine.com/static/sdk/sdk.js";
-        //     fjs.parentNode.insertBefore(js, fjs);
-        // }(document, "script", "sphere-engine-compilers-jssdk"));
-    </script>
+
     <script async src="https://tlk.io/embed.js" type="text/javascript"></script>
     <script>
         TogetherJSConfig_hubBase = "https://candy-robust-middle.glitch.me/";
     </script>
-    <!-- <script src="//angrytools.com/include/js/at-main-01.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/javascript"></script>
     <script src="https://togetherjs.com/togetherjs.js"></script>
-    <script src='programar.js'></script>
+    <script src='scripts/programar.js'></script>
 </body>
 
 </html>

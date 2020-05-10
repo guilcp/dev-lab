@@ -17,7 +17,7 @@ onload = () => {
             userAtual: JSON.parse(sessionStorage.getItem('userAtual'))
         },
         created: function() {
-            axios.post('../index.php', {
+            axios.post('index.php', {
                     functionname: "getJson",
                     arguments: ["dbfake.json"]
                 })
@@ -61,7 +61,7 @@ onload = () => {
                 if (found != undefined) return found.id;
             },
             getData() {
-                axios.post('../index.php', {
+                axios.post('index.php', {
                         functionname: "getJson",
                         arguments: ["dbfake.json"]
                     })
@@ -81,7 +81,7 @@ onload = () => {
                     });
             },
             setData(dados) {
-                axios.post('../index.php', {
+                axios.post('index.php', {
                         functionname: "writeJson",
                         arguments: ["dbfake.json", JSON.stringify(dados)]
                     })
@@ -98,7 +98,6 @@ onload = () => {
             },
             entrarSala(event) {
                 if (nomeSalaEntrar.value != "" && senhaSalaEntrar.value != "") {
-                    // let rooms = JSON.parse(localStorage.getItem('rooms'));
                     let found = this.data.rooms.find((room) => {
                         return (room.nome == document.getElementById('nomeSalaEntrar').value);
                     });
@@ -119,14 +118,12 @@ onload = () => {
                                     this.data.rooms[indexFound].invites.push(userAtual);
                                     this.setData(this.data);
                                 }
-                                // localStorage.setItem('rooms', JSON.stringify(rooms));
                             }
                             event.target.action = event.target.action.replace("undefined", found.id);
                         } else {
                             alert('A senha inserida é inválida!');
                             event.preventDefault();
                         }
-                        // sessionStorage.setItem('userAtual', JSON.stringify(found));
                     }
                 } else {
                     alert("Digite as credenciais para entrar na sala!");
@@ -135,7 +132,6 @@ onload = () => {
             },
             criarSala(event) {
                 if (nomeSalaCriar.value != "" && senhaSalaCriar.value != "") {
-                    // let rooms = JSON.parse(localStorage.getItem('rooms'));
                     let found = this.data.rooms.find((room) => {
                         return (room.nome == document.getElementById('nomeSalaCriar').value);
                     });
