@@ -256,7 +256,7 @@ onload = () => {
                         }),
                         success: function(data) {
                             console.log(data);
-                            if (data.output != null) $('#output-1 textarea').val() = data.output;
+                            if (data.output != null) $('#output-1 textarea').val(data.output);
                         },
                         error: function(xhr, status, error) {
                             console.log(xhr.statusText);
@@ -322,23 +322,24 @@ onload = () => {
         window.location.pathname = "/src/index.html";
     }
 
-    $('.output').on("change", function(event) {
-        var sharedtext = $(event.target.id).html()
-        if (TogetherJS.running) {
-            TogetherJS.send({
-                type: "form-update",
-                output: sharedtext
-            });
-        }
-    });
-    TogetherJS.hub.on("form-update", function(msg) {
-        if (!msg.sameUrl) {
-            return;
-        }
-        console.log('evento recebido');
-    });
+
 
 }
+$('.output textarea').on("change", function(event) {
+    var sharedtext = $(event.target.id).html()
+    if (TogetherJS.running) {
+        TogetherJS.send({
+            type: "form-update",
+            output: sharedtext
+        });
+    }
+});
+TogetherJS.hub.on("form-update", function(msg) {
+    if (!msg.sameUrl) {
+        return;
+    }
+    console.log('evento recebido');
+});
 
 function getUserAtual() {
     return JSON.parse(sessionStorage.getItem('userAtual'));
@@ -378,11 +379,11 @@ $('#tlkio').attr('data-channel', 'dev-lab-' + getNomeSala());
 
 setInterval(() => {
     if (TogetherJS.running) {
-        document.getElementById('togetherjs-container').style.display = 'none';
-        document.getElementById('togetherjs-template-cursor').style.display = 'none';
-        document.getElementsByClassName('togetherjs-clicking').style.display = 'none';
-        document.getElementsByClassName('togetherjs-cursor').style.display = 'none';
-        document.getElementsByClassName('togetherjs').style.display = 'none';
-        document.getElementsByClassName('togetherjs-scrolled-normal').style.display = 'none';
+        if (document.getElementById('togetherjs-container') != null && document.getElementById('togetherjs-container') != undefined) document.getElementById('togetherjs-container').style.display = 'none';
+        if (document.getElementById('togetherjs-template-cursor') != null && document.getElementById('togetherjs-template-cursor') != undefined) document.getElementById('togetherjs-template-cursor').style.display = 'none';
+        if (document.getElementById('togetherjs-clicking') != null && document.getElementById('togetherjs-clicking') != undefined) document.getElementsByClassName('togetherjs-clicking').style.display = 'none';
+        if (document.getElementById('togetherjs-cursor') != null && document.getElementById('togetherjs-cursor') != undefined) document.getElementsByClassName('togetherjs-cursor').style.display = 'none';
+        if (document.getElementById('togetherjs') != null && document.getElementById('togetherjs') != undefined) document.getElementsByClassName('togetherjs').style.display = 'none';
+        if (document.getElementsByClassName('togetherjs-scrolled-normal') != null && document.getElementById('togetherjs-scrolled-normal') != undefined) document.getElementsByClassName('togetherjs-scrolled-normal').style.display = 'none';
     }
 }, 1);
