@@ -11,7 +11,8 @@ Trabalho Interdisciplinar - Aplicacões Web
 
 <!-- > Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, não é a hora de comentar sobre a aplicação. Descreva também o contexto em que essa aplicação será usada, se houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos. -->
 Essa aplicação visa resolver as dificuldades que os alunos de cursos da área de Tecnologia da Informação que cursam disciplinas de desenvolvimento, ou seja, disciplinas que demandam escrita de códigos e programação, enfrentam em relação à realização de trabalhos, atividades e práticas de laboratório dessas tais disciplinas.
- Essas dificuldades podem ser definidas especificamente como acessibilidade e contato irregular entre professores e alunos para sanar dúvidas, em alguns casos elas se apresentam como o aluno não possuir o hardware ou software necessário para a realização das suas atividades acadêmica de desenvolvimento em casa, sendo também apresentadas como a falta de auxílio do professor ou do colega de classe ao realizar as tarefas.
+
+Essas dificuldades podem ser definidas especificamente como acessibilidade e contato irregular entre professores e alunos para sanar dúvidas, em alguns casos elas se apresentam como o aluno não possuir o hardware ou software necessário para a realização das suas atividades acadêmica de desenvolvimento em casa, sendo também apresentadas como a falta de auxílio do professor ou do colega de classe ao realizar as tarefas.
 
 O que ocorre muita das vezes são situações às quais o aluno enfrenta dificuldades de configurar seu computador de casa para a realização das tarefas, tendo problemas ao instalar alguma IDE ou software necessário para a prática. 
 Também ocorrem outras situações as quais o aluno não encontra um meio de tirar sua dúvida com o professor ou colega, por precisar de compartilhar seu código ou mostrar algo a mais ocorrendo na execução do mesmo.
@@ -40,7 +41,9 @@ Portanto, o público alvo já é familiarizado com sistemas automatizados, softw
 
 <!-- >Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho. -->
 
-O objetivo do trabalho é desenvolver um software que ajude a melhorar e mitigar o problema apresentado acima. Assim, criar um software que disponibilize um ambiente de desenvolvimento adequado para os alunos programarem códigos destinados às suas atividades acadêmicas. De forma que esse ambiente seja uma IDE online, para que o acesso seja democrático e ajude os alunos que não possuem o equipamento necessário. Além disso, realizando o mesmo de maneira que seja disponibilizado o compartilhamento em tempo real de problemas e soluções entre os alunos entre si e professores. De modo a possibilitar os usuários a se comunicarem por um bate papo ao vivo, para assim mitigar a situação de esclarecimento de dúvidas e fixação da matéria por parte dos alunos.
+O objetivo do trabalho é desenvolver um software que ajude a melhorar e mitigar o problema apresentado acima. Assim, criar um software que disponibilize um ambiente de desenvolvimento adequado para os alunos programarem códigos destinados às suas atividades acadêmicas. De forma que esse ambiente seja uma IDE online, para que o acesso seja democrático e ajude os alunos que não possuem o equipamento necessário.
+
+Além disso, realizando o mesmo de maneira que seja disponibilizado o compartilhamento em tempo real de problemas e soluções entre os alunos entre si e professores. De modo a possibilitar os usuários a se comunicarem por um bate papo ao vivo, para assim mitigar a situação de esclarecimento de dúvidas e fixação da matéria por parte dos alunos.
 
 Portanto, permanecendo com o foco do propósito do trabalho em melhorar a experiência acadêmica de aprendizagem. De maneira a priorizar tanto o lado do professor que irá possuir outras formas de transmitir conteúdo e ajudar na fixação do mesmo, quanto a parte do aluno que terá disponibilizado um conforto maior em aprender e em ajudar os seus colegas.
 
@@ -140,11 +143,31 @@ Para projetar a interface, foram confeccionados esboços de telas(storyboards), 
 
 
 Os protótipos de telas ou wireframes criados pelo grupo foram realizados pela plataforma Marvel e são apresentados abaixo: 
+
+Wireframe da Tela Principal:
 ![Wireframe da Tela Principal](images/wireframe_tela_principal.png)
+
+O wireframe da Tela Principal foi criado tendo em mente que era necessário um visual que atraisse a atenção do usuário. Devido a isso, foi planejado a imagem central com o texto convidando o usuário a experimentar a solução.
+
+Também foi pensado uma barra de navegação com o logo da plataforma que facilitasse o fluxo do usuário pela aplicação.
+
+Além disso, foi planejado um footer padrão para todas as páginas da aplicação que possuisse um aspecto simples e limpo, porém ainda sim funcional. 
+
+Wireframe do Modal de Cadastro:
 ![Wireframe do Modal Cadastro](images/wireframe_modal_cadastro.png)
+O wireframe do modal de cadastro foi planejado de tal forma visando facilitar a implementação do mesmo e simplificar o fluxo do usuário pela aplicação. Dessa forma, o usuário tem seu foco no modal apresentado mas visualiza que pode sair do mesmo a partir de um clique.
+
+Wireframe do Modal de Login:
 ![Wireframe do Modal Login](images/wireframe_modal_login.png)
+O wireframe do modal de login teve em mente as mesmas características do modal de cadastro, ambos trazem um aspecto simples, porém sofisticado ao site. 
+
+Wireframe da Tela Home:
 ![Wireframe da Tela Home](images/wireframe_tela_home.png)
+O wireframe da tela home da aplicação foi pensado tendo como objetivo apresentar para o usuário todas as informações principais do projeto de um modo limpo e organizado. O mesmo dispõe de dois destaques para criar e entrar em uma sala e ao lado de ambos está tanto as salas criadas anteriormente, quanto as salas entradas anteriormente. Portanto, permitindo ao usuário visualizar as informações necessárias para o entendimento e uso da aplicação de forma distribuída.
+
+Wireframe da Tela Programar:
 ![Wireframe da Tela Programar](images/wireframe_tela_programar.png)
+O wireframe da tela programar foi planejado visando apresentar as duas maiores funcionalidades da tela, em uma só disposição. Ou seja, disponibilizar o ambiente de desenvolvimento e o chat multualmente para a visualização do usuário. De forma que o ambiente de desenvolvimento ocupe maior espaço, pois o mesmo representa o diferencial da aplicação e apresenta maior quantidade de informações ao usuário. 
 
 O userflow gerado a partir dos wireframes acima pode ser visualizado abaixo:
 ![Diagrama de UserFlow](images/flowmap.png)
@@ -158,7 +181,20 @@ O userflow evidencia o fluxo que o usuário pode estar realizando pelas telas do
 
 # Avaliação da Aplicação
 
-> Apresente os cenários de testes utilizados na realização dos testes da sua aplicação. Escolha cenários de testes que demonstrem os requisitos sendo satisfeitos. 
+<!-- > Apresente os cenários de testes utilizados na realização dos testes da sua aplicação. Escolha cenários de testes que demonstrem os requisitos sendo satisfeitos.  -->
+Para a realização da avaliação da aplicação, foram selecionados cenários de testes que verifiquem a funcionalidade da mesma e aprovem os requisitos do projeto. Em síntese, os casos de teste selecionados foram baseados no uso da funcionalidade de colaboração da aplicação por mais de um usuário, os quais era esperado um resultado que ambos usuários pudessem compartilhar o uso do ambiente de desenvolvimento simultaneamente, e assim visualizarem as edições feitas por outros usuários como também realizarem edições que serão apresentadas à ambos usuários.
+
+O primeiro cenário de teste realizado foi o caso onde um usuário não cadastrado tenta logar na aplicação, o mesmo apresentou o resultado esperado, o qual é não permitir o login do usuário. Seguidamente, foi realizado o caso onde um usuário tenta cadastrar um e-mail que já está cadastrado na aplicação, o resultado esperado foi alcançado, o qual é não permitir o cadastro do usuário. Após isso, foi testado o cenário o qual o usuário loga com o e-mail correto, porém digita a senha errada para aquele e-mail cadastrado, o mesmo apresentou o resultado esperado não aprovando o login do usuário.
+
+Ademais, foram realizados testes do fluxo comum, os quais são compostos de um cenário, o qual o usuário se cadastra com um e-mail válido e não cadastrado no sistema, e outro cenário que o usuário loga com um e-mail já cadastrado utilizando das credenciais corretas. Ambos cenários apresentaram fluxo correto, sendo que no primeiro caso o usuário foi cadastrado e no segundo caso o usuário foi logado.
+
+Além disso, foi realizado um dos principais testes da aplicação, o qual um usuário cadastrado loga na aplicação corretamente e cria uma sala para programar utilizando do ambiente de desenvolvimento, inserindo o nome e a senha da sala. O resultado esperado foi obtido, o usuário cria a sala e é direcionado para a tela a qual possui o ambiente de desenvolvimento. Em paralelo a esse caso, também foi realizado o teste em que o usuário não insere o nome e senha para a sala que está criando, o resultado esperado é alcançado, o mesmo é um alerta pedindo que o usuário insira esses dados.
+
+Além de que, o cenário de execução de código na aplicação também foi testado. O caso foi realizado de modo que um usuário cadastrado loga corretamente e cria uma sala inserindo os dados corretamente. Após isso, o usuário é direcionado à página do ambiente de desenvolvimento online e o mesmo digita o código a ser compilado. Seguidamente, o mesmo clica no botão “Executar” e tem o retorno da execução do seu código apresentado na aba “Output”, também altera a linguagem de programação utilizada pelo select inferior e  baixa o código apresentado ao clicar no botão “Baixar”. O resultado esperado de todas as ações realizadas foi obtido e portanto, conclui-se que a funcionalidade de execução de código em ambiente de desenvolvimento online é confirmada.
+
+Para a conclusão dos testes, foi realizado o caso de teste principal da aplicação, o qual verifica a funcionalidade de ambiente de desenvolvimento colaborativo. Esse cenário foi feito de forma a logar dois usuários em um mesmo navegador, porém um sendo realizado por uma guia normal e outro realizado por uma guia anônima. Dentre esses usuários, um deles cria uma sala para o ambiente de desenvolvimento e compartilha o link da mesma com o outro usuário. Em seguida, o usuário que recebe o tal link, estando logado na aplicação, cola o link recebido na barra de pesquisa do navegador e é direcionado para a página da sala criada, assim podendo colaborar no código escrito e comunicar com os usuários da sala pelo chat disponível. Portanto, o cenário descrito acima alcança o resultado esperado e confirma a funcionalidade de compartilhamento do ambiente de desenvolvimento online.
+
+
 # Referências
 
-> Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho. Para isso, utilize o [formato ABNT](https://www.normastecnicas.com/abnt/trabalhos-academicos/referencias/)
+<!-- > Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho. Para isso, utilize o [formato ABNT](https://www.normastecnicas.com/abnt/trabalhos-academicos/referencias/) -->

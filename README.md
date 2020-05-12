@@ -30,7 +30,8 @@ Local reservado para o armazenameto do código fonte do projeto. Esta pasta carr
 # Orientações sobre o projeto
 
 Essa aplicação visa resolver as dificuldades que os alunos de cursos da área de Tecnologia da Informação que cursam disciplinas de desenvolvimento, ou seja, disciplinas que demandam escrita de códigos e programação, enfrentam em relação à realização de trabalhos, atividades e práticas de laboratório dessas tais disciplinas.
- Essas dificuldades podem ser definidas especificamente como acessibilidade e contato irregular entre professores e alunos para sanar dúvidas, em alguns casos elas se apresentam como o aluno não possuir o hardware ou software necessário para a realização das suas atividades acadêmica de desenvolvimento em casa, sendo também apresentadas como a falta de auxílio do professor ou do colega de classe ao realizar as tarefas.
+ 
+Essas dificuldades podem ser definidas especificamente como acessibilidade e contato irregular entre professores e alunos para sanar dúvidas, em alguns casos elas se apresentam como o aluno não possuir o hardware ou software necessário para a realização das suas atividades acadêmica de desenvolvimento em casa, sendo também apresentadas como a falta de auxílio do professor ou do colega de classe ao realizar as tarefas.
 
 O que ocorre muita das vezes são situações às quais o aluno enfrenta dificuldades de configurar seu computador de casa para a realização das tarefas, tendo problemas ao instalar alguma IDE ou software necessário para a prática. 
 Também ocorrem outras situações as quais o aluno não encontra um meio de tirar sua dúvida com o professor ou colega, por precisar de compartilhar seu código ou mostrar algo a mais ocorrendo na execução do mesmo.
