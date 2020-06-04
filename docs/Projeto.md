@@ -144,7 +144,7 @@ Para projetar a interface, foram confeccionados esboços de telas(storyboards), 
 
 Os protótipos de telas ou wireframes criados pelo grupo foram realizados pela plataforma Marvel e são apresentados abaixo: 
 
-Wireframe da Tela Principal:
+__Wireframe da Tela Principal:__
 ![Wireframe da Tela Principal](images/wireframe_tela_principal.png)
 
 O wireframe da Tela Principal foi criado tendo em mente que era necessário um visual que atraisse a atenção do usuário. Devido a isso, foi planejado a imagem central com o texto convidando o usuário a experimentar a solução.
@@ -153,19 +153,19 @@ Também foi pensado uma barra de navegação com o logo da plataforma que facili
 
 Além disso, foi planejado um footer padrão para todas as páginas da aplicação que possuisse um aspecto simples e limpo, porém ainda sim funcional. 
 
-Wireframe do Modal de Cadastro:
+__Wireframe do Modal de Cadastro:__
 ![Wireframe do Modal Cadastro](images/wireframe_modal_cadastro.png)
 O wireframe do modal de cadastro foi planejado de tal forma visando facilitar a implementação do mesmo e simplificar o fluxo do usuário pela aplicação. Dessa forma, o usuário tem seu foco no modal apresentado mas visualiza que pode sair do mesmo a partir de um clique.
 
-Wireframe do Modal de Login:
+__Wireframe do Modal de Login:__
 ![Wireframe do Modal Login](images/wireframe_modal_login.png)
 O wireframe do modal de login teve em mente as mesmas características do modal de cadastro, ambos trazem um aspecto simples, porém sofisticado ao site. 
 
-Wireframe da Tela Home:
+__Wireframe da Tela Home:__
 ![Wireframe da Tela Home](images/wireframe_tela_home.png)
 O wireframe da tela home da aplicação foi pensado tendo como objetivo apresentar para o usuário todas as informações principais do projeto de um modo limpo e organizado. O mesmo dispõe de dois destaques para criar e entrar em uma sala e ao lado de ambos está tanto as salas criadas anteriormente, quanto as salas entradas anteriormente. Portanto, permitindo ao usuário visualizar as informações necessárias para o entendimento e uso da aplicação de forma distribuída.
 
-Wireframe da Tela Programar:
+__Wireframe da Tela Programar:__
 ![Wireframe da Tela Programar](images/wireframe_tela_programar.png)
 O wireframe da tela programar foi planejado visando apresentar as duas maiores funcionalidades da tela, em uma só disposição. Ou seja, disponibilizar o ambiente de desenvolvimento e o chat multualmente para a visualização do usuário. De forma que o ambiente de desenvolvimento ocupe maior espaço, pois o mesmo representa o diferencial da aplicação e apresenta maior quantidade de informações ao usuário. 
 
